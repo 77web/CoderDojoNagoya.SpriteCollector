@@ -1,0 +1,24 @@
+{
+    "name": "coderdojo-nagoya/sprite-collector",
+    "description":" ",
+    "keywords":[
+    ],
+    "license": "BSD-3-Clause",
+    "autoload":{
+        "psr-4":{
+            "CoderDojoNagoya\\SpriteCollector\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "CoderDojoNagoya\\SpriteCollector\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "0.1.x-dev"
+        }
+    }
+}
