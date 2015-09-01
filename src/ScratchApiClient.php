@@ -44,4 +44,24 @@ class ScratchApiClient
 
         return $projectIds;
     }
+
+    /**
+     * @param int $projectId
+     * @return array
+     */
+    public function getProject($projectId)
+    {
+        $response = $this->httpClient->get('http://projects.scratch.mit.edu/internalapi/project/'.$projectId.'/get/');
+        if (200 != $response->getStatusCode()) {
+            throw new \RuntimeException('Could not fetch json for project '.$projectId);
+        }
+
+        $json = $response->getBody()->getContents();
+        $data = json_decode($json, true);
+        if (!$data) {
+            throw new \RuntimeException('Could not decode project json'.$json);
+        }
+
+        return $data;
+    }
 }
